@@ -1,13 +1,22 @@
-import { AppBar } from '@/components/AppBar'
-import { SideBar } from '@/components/SideBar'
-import React from 'react'
+import { AppBar } from "@/components/AppBar";
+import { SideBar } from "@/components/SideBar";
 
-const layout = ({children}: {children: React.ReactNode}) => {
+export default function({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <>
-    {/* <AppBar/> */}
-    </>
-  )
-}
+    <html lang="en">
+      <body>
+          
+        <AppBar/>
+        <SideBar/>
 
-export default layout
+        <div className=" absolute top-15 left-50">
+        {children}
+        </div>
+      </body>
+    </html>
+  );
+}
